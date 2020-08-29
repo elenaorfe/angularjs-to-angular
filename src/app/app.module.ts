@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { UpgradeModule } from '@angular/upgrade/static';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { Phone } from './core/phone/phone.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,12 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UpgradeModule
+    UpgradeModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    Phone
+  ],
   bootstrap: []
 })
 export class AppModule {
