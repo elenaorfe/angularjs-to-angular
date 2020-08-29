@@ -1,6 +1,4 @@
-import * as angular from 'angular';
 import { Component } from '@angular/core';
-import { downgradeComponent } from '@angular/upgrade/static';
 
 import { PhoneData, Phone } from '../core/phone/phone.service';
 
@@ -21,10 +19,3 @@ export class PhoneListComponent {
     this.orderProp = 'age';
   }
 }
-
-angular.
-  module('phoneList').
-  directive(
-    'phoneList', 
-    downgradeComponent({component: PhoneListComponent}) as angular.IDirectiveFactory
-  );

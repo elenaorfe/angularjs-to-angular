@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import * as angular from 'angular';
-import { downgradeInjectable } from '@angular/upgrade/static';
 
 export interface PhoneData {
   additionalFeatures: string;
@@ -64,6 +62,3 @@ export class Phone {
     return this.http.get<PhoneData>(`assets/phones/${id}.json`);
   }
 }
-
-angular.module('core.phone')
-  .factory('phone', downgradeInjectable(Phone));

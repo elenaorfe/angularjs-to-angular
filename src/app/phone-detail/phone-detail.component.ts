@@ -1,6 +1,4 @@
-import * as angular from 'angular';
-import { Component, Inject } from '@angular/core';
-import { downgradeComponent } from '@angular/upgrade/static';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { PhoneData, Phone } from '../core/phone/phone.service';
@@ -26,11 +24,3 @@ export class PhoneDetailComponent {
     this.mainImageUrl = imageUrl;
   }
 }
-
-angular.
-  module('phoneDetail').
-  directive(
-    'phoneDetail', 
-    downgradeComponent({component: PhoneDetailComponent}) as angular.IDirectiveFactory
-  );
-  

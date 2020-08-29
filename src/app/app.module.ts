@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { UpgradeModule } from '@angular/upgrade/static';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -25,22 +24,14 @@ import { OrderByPipe } from './pipes/order-by.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UpgradeModule,
     HttpClientModule,
     FormsModule
   ],
   providers: [
     Phone
   ],
-  bootstrap: [],
-  entryComponents: [
-    PhoneListComponent,
-    PhoneDetailComponent
+  bootstrap: [
+    AppComponent
   ]
 })
-export class AppModule {
-  constructor(private upgrade: UpgradeModule) { }
-  ngDoBootstrap() {
-    this.upgrade.bootstrap(document.documentElement, ['phonecatApp']);
-  }
-}
+export class AppModule {}
