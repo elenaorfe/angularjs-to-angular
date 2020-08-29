@@ -1,6 +1,7 @@
 import * as angular from 'angular';
 import { Component, Inject } from '@angular/core';
 import { downgradeComponent } from '@angular/upgrade/static';
+import { ActivatedRoute } from '@angular/router';
 
 import { PhoneData, Phone } from '../core/phone/phone.service';
 
@@ -13,8 +14,8 @@ export class PhoneDetailComponent {
   phone: PhoneData;
   mainImageUrl: string;
 
-  constructor(@Inject(String) private $routeParams: angular.route.IRouteParamsService, phone: Phone) {
-    let phoneId = $routeParams['phoneId'];
+  constructor(activateRoute: ActivatedRoute, phone: Phone) {
+    let phoneId = activateRoute.snapshot.paramMap.get('phoneId');
     phone.get(phoneId).subscribe(data => {
       this.phone = data;
       this.setImage(data.images[0]);
