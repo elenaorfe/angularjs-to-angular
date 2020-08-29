@@ -7,6 +7,9 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 import ajsApp from './app/app.module.ajs';
+import states from './app/app.config.ajs';
+
+states(ajsApp);
 
 setAngularJSGlobal(angular);
 
