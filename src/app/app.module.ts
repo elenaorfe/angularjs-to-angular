@@ -9,12 +9,18 @@ import { AppComponent } from './app.component';
 import { Phone } from './core/phone/phone.service';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
+import { CheckmarkPipe } from './core/checkmark/checkmark.pipe';
+import { SearchPipe } from './pipes/search.pipe';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PhoneListComponent,
-    PhoneDetailComponent
+    PhoneDetailComponent,
+    CheckmarkPipe,
+    SearchPipe,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
